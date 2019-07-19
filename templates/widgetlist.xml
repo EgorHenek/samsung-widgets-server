@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rsp stat="ok">
+    <list>
+        {% for widget, params in widgets.items() %}
+            <widget id="{{ widget }}">
+                <title>{{ widget }}</title>
+                <type>user</type>
+                <compression size="{{ params['size'] }}" type="zip"/>
+                <description></description>
+                <download>http://{{ ip }}/static/widgets/{{ params['file_name'] }}</download>
+            </widget>
+        {% endfor %}
+    </list>
+</rsp>
